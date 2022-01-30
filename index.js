@@ -1,77 +1,75 @@
 const drums = document.querySelectorAll(".drum")
-const audio = new Audio()
-drums[0].addEventListener("click", (e) => {
-    if(drums[0].classList.contains('w')){
+function playSound(instrument){
+    if(instrument === 'w'){
         audio.src = 'sounds\\tom-1.mp3'
         audio.play()
-    }
-})
-drums[1].addEventListener("click", (e) => {
-    if(drums[1].classList.contains('a')){
+    } else if(instrument === 'a'){
         audio.src = 'sounds\\tom-2.mp3'
         audio.play()
-    }
-})
-drums[2].addEventListener("click", (e) => {
-    if(drums[2].classList.contains('s')){
+    } else if(instrument === 's'){
         audio.src = 'sounds\\tom-3.mp3'
         audio.play()
-    }
-})
-drums[3].addEventListener("click", (e) => {
-    if(drums[3].classList.contains('d')){
+    } else if(instrument === 'd'){
         audio.src = 'sounds\\tom-4.mp3'
         audio.play()
-    }
-})
-drums[4].addEventListener("click", (e) => {
-    if(drums[4].classList.contains('j')){
+    } else if(instrument === 'j'){
         audio.src = 'sounds\\snare.mp3'
         audio.play()
-    }
-})
-drums[5].addEventListener("click", (e) => {
-    if(drums[5].classList.contains('k')){
+    } else if(instrument === 'k'){
         audio.src = 'sounds\\crash.mp3'
         audio.play()
-    }
-})
-drums[6].addEventListener("click", (e) => {
-    if(drums[6].classList.contains('l')){
+    } else if(instrument === 'l'){
         audio.src = 'sounds\\kick-bass.mp3'
         audio.play()
+    } else {
+        console.log("This is not th right instrument!")
     }
+}
+const audio = new Audio()
+drums[0].addEventListener("click", (e) => {
+    playSound('w')
+})
+drums[1].addEventListener("click", (e) => {
+    playSound('a')
+})
+drums[2].addEventListener("click", (e) => {
+    playSound('s')
+})
+drums[3].addEventListener("click", (e) => {
+    playSound('d')
+})
+drums[4].addEventListener("click", (e) => {
+    playSound('j')
+})
+drums[5].addEventListener("click", (e) => {
+    playSound('k')
+})
+drums[6].addEventListener("click", (e) => {
+    playSound('l')
 })
 
 document.addEventListener('keydown', (e) => {
     switch(e.key){
         case 'w':
-            audio.src = 'sounds\\tom-1.mp3'
-            audio.play()
+            playSound('w')
             break
         case 'a':
-            audio.src = 'sounds\\tom-2.mp3'
-            audio.play()
+            playSound('a')
             break
         case 's':
-            audio.src = 'sounds\\tom-3.mp3'
-            audio.play()
+            playSound('s')
             break
         case 'd':
-            audio.src = 'sounds\\tom-4.mp3'
-            audio.play()
+            playSound('d')
             break
         case 'j':
-            audio.src = 'sounds\\snare.mp3'
-            audio.play()
+            playSound('j')
             break
         case 'k':
-            audio.src = 'sounds\\crash.mp3'
-            audio.play()
+            playSound('k')
             break
         case 'l':
-            audio.src = 'sounds\\kick-bass.mp3'
-            audio.play()
+            playSound('l')
             break
         default:
             console.log("Wrong key")
