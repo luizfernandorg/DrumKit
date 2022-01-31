@@ -1,4 +1,6 @@
 const drums = document.querySelectorAll(".drum")
+const audio = new Audio()
+
 function playSound(instrument){
     if(instrument === 'w'){
         audio.src = 'sounds\\tom-1.mp3'
@@ -25,27 +27,11 @@ function playSound(instrument){
         console.log("This is not the right instrument!")
     }
 }
-const audio = new Audio()
-drums[0].addEventListener("click", (e) => {
-    playSound('w')
-})
-drums[1].addEventListener("click", (e) => {
-    playSound('a')
-})
-drums[2].addEventListener("click", (e) => {
-    playSound('s')
-})
-drums[3].addEventListener("click", (e) => {
-    playSound('d')
-})
-drums[4].addEventListener("click", (e) => {
-    playSound('j')
-})
-drums[5].addEventListener("click", (e) => {
-    playSound('k')
-})
-drums[6].addEventListener("click", (e) => {
-    playSound('l')
+
+drums.forEach((v,e) => {
+    v.addEventListener("click", (e) => {
+        playSound(v.className[0])
+    })
 })
 
 document.addEventListener('keydown', (e) => {
