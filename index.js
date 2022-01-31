@@ -22,7 +22,7 @@ function playSound(instrument){
         audio.src = 'sounds\\kick-bass.mp3'
         audio.play()
     } else {
-        console.log("This is not th right instrument!")
+        console.log("This is not the right instrument!")
     }
 }
 const audio = new Audio()
