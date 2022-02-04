@@ -50,6 +50,6 @@ function buttonAnimation(key){
     
     setTimeout(() => {
         document.querySelector("."+key).classList.remove("pressed")
-    },1000)
+    },100)
     
 }
