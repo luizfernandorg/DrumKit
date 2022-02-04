@@ -30,10 +30,21 @@ function playSound(instrument){
 
 drums.forEach((v,index) => {
     v.addEventListener("click", (e) => {
+        buttonAnimation(v.className[0])
         playSound(v.className[0])
     })
 })
 
 document.addEventListener('keydown', (e) => {
+    buttonAnimation(e.key)
     playSound(e.key);
 })
+function buttonAnimation(key){
+    console.log(key)
+    document.querySelector("."+key).classList.add("pressed")
+    
+    setTimeout(() => {
+        document.querySelector("."+key).classList.remove("pressed")
+    },1000)
+    
+}
