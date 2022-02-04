@@ -28,7 +28,7 @@ function playSound(instrument){
     }
 }
 
-drums.forEach((v,e) => {
+drums.forEach((v,index) => {
     v.addEventListener("click", (e) => {
         playSound(v.className[0])
     })
