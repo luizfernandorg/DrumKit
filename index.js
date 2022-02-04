@@ -35,29 +35,5 @@ drums.forEach((v,index) => {
 })
 
 document.addEventListener('keydown', (e) => {
-    switch(e.key){
-        case 'w':
-            playSound('w')
-            break
-        case 'a':
-            playSound('a')
-            break
-        case 's':
-            playSound('s')
-            break
-        case 'd':
-            playSound('d')
-            break
-        case 'j':
-            playSound('j')
-            break
-        case 'k':
-            playSound('k')
-            break
-        case 'l':
-            playSound('l')
-            break
-        default:
-            console.log("Wrong key")
-    }
+    playSound(e.key);
 })
